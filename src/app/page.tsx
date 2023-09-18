@@ -1,9 +1,8 @@
-import React from 'react'
+"use client";
+import Spline from '@splinetool/react-spline';
 
-export default function Home() {
+export default function App() {
   return (
-   <main className='mx-16'>
-      <h1 className="text-5xl font-extrabold">Home</h1>
-   </main>
-  )
+    <Spline scene="https://prod.spline.design/DNV71tby5tu-QXdM/scene.splinecode" />
+  );
 }

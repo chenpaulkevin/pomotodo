@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.shadow-solid-primary {
+  box-shadow: 5px 5px black;
+}
+.stroke-thick {
+  stroke: black;
+  stroke-width: 1.5px;
+}

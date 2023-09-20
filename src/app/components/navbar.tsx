@@ -158,12 +158,8 @@ function Navbar() {
               >
                 {navLinks.map((link, index) => {
                   return (
-                    <div className="overflow-hidden">
-                      <MobileNavLink
-                        key={index}
-                        title={link.title}
-                        href={link.href}
-                      />
+                    <div className="overflow-hidden" key={index}>
+                      <MobileNavLink title={link.title} href={link.href} />
                     </div>
                   );
                 })}

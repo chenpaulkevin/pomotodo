@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 //Components:
 import Navbar from "./components/navbar";
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={`${poppins.className} m-4`}>
         <Navbar />
         {children}
+        <Analytics />
       </body>
     </html>
   );

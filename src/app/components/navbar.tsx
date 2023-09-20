@@ -88,6 +88,19 @@ function Navbar() {
     setOpen((prevOpen) => !prevOpen);
   };
 
+  const MobileNavLink = ({ title, href }: { title: string; href: any }) => {
+    return (
+      <motion.div variants={mobileLinkVars} onClick={() => setOpen(!open)}>
+        <Link
+          className="text-extrabold font-display text-white subpixel-antialiased text-4xl md:text-6xl"
+          href={href}
+        >
+          {title}
+        </Link>
+      </motion.div>
+    );
+  };
+
   return (
     <header>
       <nav>
@@ -171,19 +184,6 @@ function Navbar() {
     </header>
   );
 }
-
-const MobileNavLink = ({ title, href }: { title: string; href: any }) => {
-  return (
-    <motion.div variants={mobileLinkVars}>
-      <Link
-        className="text-extrabold font-display text-white subpixel-antialiased text-4xl md:text-6xl"
-        href={href}
-      >
-        {title}
-      </Link>
-    </motion.div>
-  );
-};
 
 const DesktopNavLink = ({ title, href }: { title: string; href: any }) => {
   if (title === "Work") {

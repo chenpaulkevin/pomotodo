@@ -14,20 +14,69 @@ const navLinks = [
 
 const menuVariants = {
   initial: {
-    scaleY: 0,
+    y: "-100vh",
   },
   animate: {
-    scaleY: 1,
+    y: "0vh",
     transition: {
-      duration: 0.5,
-      ease: [0.12, 0, 0.39, 0],
+      duration: 0.45,
+      ease: "easeInOut",
     },
   },
   exit: {
-    scaleY: 0,
+    y: "-100vh",
+    transition: {
+      delay: 0.4,
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const containerVars = {
+  initial: {
+    transition: {
+      staggerChildren: 0.09,
+      staggerDirection: -1,
+    },
+  },
+  open: {
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.09,
+      staggerDirection: 1,
+    },
+  },
+};
+
+const headerVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+    },
+  },
+  exit: {
+    opacity: 0,
+  },
+};
+
+const mobileLinkVars = {
+  initial: {
+    y: "30vh",
     transition: {
       duration: 0.5,
-      ease: [0.12, 0, 0.39, 1],
+      ease: [0.37, 0, 0.63, 1],
+    },
+  },
+  open: {
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0, 0.55, 0.45, 1],
     },
   },
 };
@@ -54,9 +103,9 @@ function Navbar() {
               onClick={() => setOpen(!open)}
             >
               {open ? (
-                <XMarkIcon className="h-8 w-8 stroke-thick"></XMarkIcon>
+                <Bars3Icon className="h-8 w-8 stroke-black stroke-thick"></Bars3Icon>
               ) : (
-                <Bars3Icon className="h-8 w-8 stroke-thick"></Bars3Icon>
+                <Bars3Icon className="h-8 w-8 stroke-black stroke-thick"></Bars3Icon>
               )}
             </button>
           </div>
@@ -83,31 +132,42 @@ function Navbar() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-full h-screen origin-top bg-yellow-400 text-black p-10 lg:hidden"
+            className="fixed left-0 top-0 w-full h-screen origin-top bg-black text-black p-10 lg:hidden"
           >
-            <div className="flex h-full flex-col">
-              <div className="flex justify-between">
-                <span className="font-display text-xl md:text-2xl lg:text-3xl">
+            <div className="flex h-full flex-col m-4">
+              <motion.div
+                variants={headerVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className="flex justify-between"
+              >
+                <span className="font-display text-white text-xl md:text-2xl lg:text-3xl">
                   Pomotoro
                 </span>
-                <button
-                  className="cursor-pointer text-md text-black"
-                  onClick={toggleMenu}
-                >
-                  <XMarkIcon className="h-8 w-8 stroke-thick"></XMarkIcon>
+                <button className="cursor-pointer text-md" onClick={toggleMenu}>
+                  <XMarkIcon className="h-8 w-8 stroke-thick stroke-white"></XMarkIcon>
                 </button>
-              </div>
-              <div className="flex flex-col h-full justify-center items-center gap-4">
+              </motion.div>
+              <motion.div
+                variants={containerVars}
+                initial="initial"
+                animate="open"
+                exit="initial"
+                className="flex flex-col h-full justify-center items-center gap-4"
+              >
                 {navLinks.map((link, index) => {
                   return (
-                    <MobileNavLink
-                      key={index}
-                      title={link.title}
-                      href={link.href}
-                    />
+                    <div className="overflow-hidden">
+                      <MobileNavLink
+                        key={index}
+                        title={link.title}
+                        href={link.href}
+                      />
+                    </div>
                   );
                 })}
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         )}
@@ -118,14 +178,14 @@ function Navbar() {
 
 const MobileNavLink = ({ title, href }: { title: string; href: any }) => {
   return (
-    <div>
+    <motion.div variants={mobileLinkVars}>
       <Link
-        className="text-extrabold subpixel-antialiased text-4xl md:text-6xl"
+        className="text-extrabold font-display text-white subpixel-antialiased text-4xl md:text-6xl"
         href={href}
       >
         {title}
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

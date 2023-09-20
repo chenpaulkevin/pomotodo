@@ -31,9 +31,10 @@ const menuVariants = {
     },
   },
 };
-const [open, setOpen] = useState(false);
 
-export default function navbar() {
+function Navbar() {
+  const [open, setOpen] = useState(false);
+
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
   };
@@ -147,3 +148,5 @@ const DesktopNavLink = ({ title, href }: { title: string; href: any }) => {
     );
   }
 };
+
+export default Navbar;

@@ -31,10 +31,9 @@ const menuVariants = {
     },
   },
 };
+const [open, setOpen] = useState(false);
 
 export default function navbar() {
-  const [open, setOpen] = useState(false);
-
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
   };

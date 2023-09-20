@@ -6,6 +6,9 @@
 .shadow-solid-primary {
   box-shadow: 5px 5px black;
 }
+.shadow-solid-primary:hover {
+  box-shadow: 7px 7px black;
+}
 .stroke-thick {
   stroke-width: 1.5px;
 }

@@ -24,10 +24,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} m-4`}>
-        <Navbar />
-        {children}
-        <Analytics />
+      <body className={`${poppins.className}`}>
+        <div className="m-4">
+          <Navbar />
+          {children}
+          <Analytics />
+        </div>
       </body>
     </html>
   );

@@ -102,13 +102,15 @@ function Navbar() {
   };
 
   return (
-    <header>
+    <header className="sticky top-4 z-20 bg-white">
       <nav>
         <div className="flex justify-between items-center rounded-lg  px-8 py-6 lg:px-16 md:py-8 border-black border-2">
           <div className="logo">
-            <span className="font-display text-xl md:text-2xl lg:text-3xl">
-              Pomotoro
-            </span>
+            <Link href="/">
+              <span className="font-display text-xl md:text-2xl lg:text-3xl">
+                Pomotoro
+              </span>
+            </Link>
           </div>
           <div className="justify-self-end lg:hidden">
             <button
@@ -145,7 +147,7 @@ function Navbar() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-full h-screen origin-top bg-black text-black p-10 lg:hidden"
+            className="fixed left-0 top-0 w-full h-screen origin-top bg-black text-black z-50 p-10 lg:hidden"
           >
             <div className="flex h-full flex-col m-1 md:m-4 mx-3  md:my-3 ml-3">
               <motion.div
@@ -155,9 +157,11 @@ function Navbar() {
                 exit="exit"
                 className="flex justify-between"
               >
-                <span className="font-display text-white text-xl md:text-2xl lg:text-3xl">
-                  Pomotoro
-                </span>
+                <Link href="/" className="cursor-pointer" onClick={toggleMenu}>
+                  <span className="font-display text-white text-xl md:text-2xl lg:text-3xl">
+                    Pomotoro
+                  </span>
+                </Link>
                 <button className="cursor-pointer text-md" onClick={toggleMenu}>
                   <XMarkIcon className="h-8 w-8 stroke-thick stroke-white"></XMarkIcon>
                 </button>

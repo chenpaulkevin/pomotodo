@@ -108,7 +108,7 @@ function Navbar() {
           <div className="logo">
             <Link href="/">
               <span className="font-display text-xl md:text-2xl lg:text-3xl">
-                Pomotoro
+                <span className="text-red-500">Pomo</span>toro
               </span>
             </Link>
           </div>

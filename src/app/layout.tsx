@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className}`}>
-        <div className="m-4">
+        <div className="container p-4 mx-auto">
           <Navbar />
           {children}
           <Analytics />

@@ -1,15 +1,15 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Hind } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 //Components:
 import Navbar from "./components/navbar";
 
 //Default Font:
-const poppins = Nunito({
+const hind = Hind({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}`}>
+      <body className={`${hind.className}`}>
         <div className="container p-4 mx-auto">
           <Navbar />
           {children}

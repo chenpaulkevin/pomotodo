@@ -4,11 +4,14 @@
 @tailwind utilities;
 
 .shadow-solid-primary {
-  box-shadow: 5px 5px #1f2937;
+  box-shadow: 5px 5px #000000;
 }
 .shadow-solid-primary:hover {
-  box-shadow: 7px 7px #1f2937;
+  box-shadow: 7px 7px #000000;
 }
 .stroke-thick {
   stroke-width: 1.5px;
+}
+body {
+  cursor: wait;
 }

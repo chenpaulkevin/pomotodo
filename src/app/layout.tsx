@@ -1,10 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Hind } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-
-//Components:
-import Navbar from "./components/navbar";
+import ParentWrapper from "./parent-wrapper";
 
 //Default Font:
 const hind = Hind({
@@ -26,9 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${hind.className}`}>
         <div className="container p-4 mx-auto">
-          <Navbar />
-          {children}
-          <Analytics />
+          <ParentWrapper>{children}</ParentWrapper>
         </div>
       </body>
     </html>

@@ -92,7 +92,7 @@ function Navbar() {
     return (
       <motion.div variants={mobileLinkVars} onClick={() => setOpen(!open)}>
         <Link
-          className="font-extrabold font-display text-slate-200 subpixel-antialiased text-4xl md:text-6xl"
+          className="font-extrabold font-display text-secondary subpixel-antialiased text-4xl md:text-6xl"
           href={href}
         >
           {title}
@@ -102,9 +102,9 @@ function Navbar() {
   };
 
   return (
-    <header className="sticky top-4 z-20 bg-white text-gray-800">
+    <header className="sticky top-4 z-20 bg-secondary text-primary">
       <nav>
-        <div className="flex justify-between items-center rounded-lg  px-8 py-6 lg:px-16 md:py-8 border-gray-800 border-2">
+        <div className="flex justify-between items-center rounded-lg  px-8 py-6 lg:px-16 md:py-8 border-primary border-2">
           <div className="logo">
             <Link href="/">
               <span className="font-display font-black text-2xl md:text-4xl lg:text-4xl">
@@ -117,7 +117,7 @@ function Navbar() {
               className="transition-all duration-200"
               onClick={() => setOpen(!open)}
             >
-              <Bars3Icon className="h-8 w-8 stroke-gray-800 stroke-thick"></Bars3Icon>
+              <Bars3Icon className="h-8 w-8 stroke-primary stroke-thick"></Bars3Icon>
             </button>
           </div>
           <div className="nav-links hidden lg:block">
@@ -143,9 +143,9 @@ function Navbar() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-full h-screen origin-top bg-slate-900 z-50 p-10 lg:hidden"
+            className="fixed left-0 top-0 w-full h-screen origin-top bg-primary z-50 p-10 lg:hidden"
           >
-            <div className="flex h-full flex-col m-1 md:m-4 mx-3  md:my-3 ml-3">
+            <div className="flex h-full flex-col m-1 md:m-4 mx-3  md:my-3 ml-3 z-50">
               <motion.div
                 variants={headerVariants}
                 initial="initial"
@@ -154,12 +154,12 @@ function Navbar() {
                 className="flex justify-between"
               >
                 <Link href="/" className="cursor-pointer" onClick={toggleMenu}>
-                  <span className="font-display font-black text-slate-200 text-2xl md:text-4xl lg:text-3xl">
+                  <span className="font-display font-black text-secondary text-2xl md:text-4xl lg:text-3xl">
                     Pomotoro
                   </span>
                 </Link>
                 <button className="cursor-pointer text-md" onClick={toggleMenu}>
-                  <XMarkIcon className="h-8 w-8 stroke-thick stroke-slate-300"></XMarkIcon>
+                  <XMarkIcon className="h-8 w-8 stroke-thick stroke-secondary"></XMarkIcon>
                 </button>
               </motion.div>
               <motion.div
@@ -188,19 +188,19 @@ function Navbar() {
 const DesktopNavLink = ({ title, href }: { title: string; href: any }) => {
   if (title === "Get Started") {
     return (
-      <ul className="shadow-solid-primary px-4 py-1 rounded-md border border-2 border-black cursor-pointer ease-in-out duration-300 hover:-translate-y-1">
-        <Link className="font-black text-lg" href={href}>
+      <Link className="font-black text-lg" href={href}>
+        <ul className="shadow-solid-primary px-4 py-1 rounded-md border border-2 border-primary cursor-pointer ease-in-out duration-300 hover:-translate-y-1">
           {title}
-        </Link>
-      </ul>
+        </ul>
+      </Link>
     );
   } else {
     return (
-      <ul className="cursor-pointer duration-300 ease-in-out hover:-translate-y-1">
-        <Link className="font-bold text-lg" href={href}>
+      <Link className="font-bold text-lg" href={href}>
+        <ul className="cursor-pointer duration-300 ease-in-out hover:-translate-y-1">
           {title}
-        </Link>
-      </ul>
+        </ul>
+      </Link>
     );
   }
 };

@@ -1,13 +1,11 @@
 "use client";
-//import Spline from "@splinetool/react-spline";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-//<Spline scene="https://prod.spline.design/vgrFMIbatRcFsli4/scene.splinecode" />
 
 export default function Home() {
   return (
-    <div className="pt-4 text-primary">
+    <div className="p-6 text-primary">
       <div className="flex-wrap lg:flex-nowrap flex p-4">
         <div className="flex flex-wrap items-center w-full">
           <div className="max-w-2xl mb-8">
